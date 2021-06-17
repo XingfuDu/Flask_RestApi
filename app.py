@@ -11,7 +11,7 @@ from resources.store import Store, StoreList
 app=Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///data.db'
-app.secret_key='jose' 
+app.secret_key='jose'
 api=Api(app)
 
 @app.before_first_request
@@ -31,4 +31,4 @@ api.add_resource(UserRegister,'/register')
 
 if __name__=='__main__':
     db.init_app(app)
-    app.run(port=5000,debug=True) 
+    app.run(port=5000,debug=True)
